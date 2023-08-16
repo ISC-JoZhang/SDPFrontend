@@ -301,14 +301,8 @@ function App() {
         Header: "Name",
         columns: [
           {
-            Header: "First Name",
+            Header: "Hostname",
             accessor: "firstName"
-          },
-          {
-            Header: "Last Name",
-            accessor: "lastName",
-            // Use our custom `fuzzyText` filter on this column
-            filter: "fuzzyText"
           }
         ]
       },
@@ -316,13 +310,13 @@ function App() {
         Header: "Info",
         columns: [
           {
-            Header: "Age",
+            Header: "RAM",
             accessor: "age",
             Filter: SliderColumnFilter,
             filter: "equals"
           },
           {
-            Header: "Visits",
+            Header: "Disk",
             accessor: "visits",
             Filter: NumberRangeColumnFilter,
             filter: "between"
@@ -334,7 +328,7 @@ function App() {
             filter: "includes"
           },
           {
-            Header: "Profile Progress",
+            Header: "Cores",
             accessor: "progress",
             Filter: SliderColumnFilter,
             filter: filterGreaterThan
