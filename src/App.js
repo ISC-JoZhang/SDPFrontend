@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from 'react';
 import styled from "styled-components";
 import { useTable, useFilters } from "react-table";
 // A great library for fuzzy filtering/sorting items
 import matchSorter from "match-sorter";
 import TableFilter from "react-table-filter";
-
+import axios from 'axios';
 import makeData from "./makeData";
 
 const Styles = styled.div`
@@ -295,6 +295,7 @@ function filterGreaterThan(rows, id, filterValue) {
 filterGreaterThan.autoRemove = val => typeof val !== "number";
 
 function App() {
+  
   const columns = React.useMemo(
     () => [
       {
